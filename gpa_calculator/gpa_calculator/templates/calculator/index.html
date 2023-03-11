@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <h1>GPA Calculator</h1>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Grade</th>
+        </tr>
+        {% for grade in grades %}
+        <tr>
+            <td>{{ grade.name }}</td>
+            <td>{{ grade.credits }}</td>
+            <td>{{ grade.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Total Credits: {{ total_credits }}</p>
+    <p>GPA: {{ gpa }}</p>
+    <a href="{% url 'add_grade' %}">Add a Grade</a>
+</body>
+</html>

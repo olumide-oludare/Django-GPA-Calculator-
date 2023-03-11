@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <h1>GPA CALCULATOR</h1>
+    <main>
+        <p>Welcome to GPA Calculator!</p>
+        <p>To get started, click the "Add a Grade" button to add your Course code, Credits and Grade</p>
+    </main>
+
+    <style>
+        table{
+            border-collapse:separate;
+            border-spacing: 10px;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Course Code</th>
+            <th>Credits</th>
+            <th>Grade</th>
+        </tr>
+        {% for grade in grades %}
+        <tr>
+            <td>{{ grade.course_code }}</td>
+            <td>{{ grade.credits }}</td>
+            <td>{{ grade.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Total Credits: {{ total_credits }}</p>
+    <p>Total Points: {{ total_points }}</p>
+    <p>GPA: {{ gpa }}</p>
+    <a href="{% url 'add_grade' %}">Add a Grade</a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<ol>
+    <div id="instructions">
+      <h2>Instructions</h2>
+      <p>1. Click the "Add a Grade" button to add a new grade.</p>
+      <p>2. Enter the course code, Credits and grade of your course, then click "Add Grade".</p>
+      <p>3. Repeat steps for each course you want to include in your GPA.</p>
+    </div>
+</ol>  
+</body>
+</html>

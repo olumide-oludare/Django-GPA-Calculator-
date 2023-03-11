@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a Grade</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Enter Your Grade</h1>
+    <main>
+        <p> Enter your Course code, Credits and Grade </p>
+        <p> click on "Add Grade" to add your Grade </p>
+    </main>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Grade</button>    
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<ol>
+
+          <h2>Instructions</h2>
+          <p>Enter the Course code of the course in the "Course code" field.</p>
+          <p>Enter the Credits for the course in the "Credits" field.</p>
+          <p>Enter the Grade for the course in the "Grade" field.</p>
+          <p>NOTE:</p>
+          <p>Grade A = 5</p>
+          <p>Grade B = 4</p>
+          <p>Grade C = 3</p>
+          <p>Grade D = 2</p>
+          <p>Grade E = 1</p>
+          <p>Grade F = 0</p>
+</ol>
+</body>
+</html>
